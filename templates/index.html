@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+    <p id="load">Checking for current prices!</p>
+    <table class="table table-striped" style="background-color: white;">
+        <thead>
+            <td>Symbol</td>
+            <td>Name</td>
+            <td>Shares</td>
+            <td>Purchase Price</td>
+            <td>Current Price</td>
+            <td>TOTAL</td>
+        </thead>
+        <tbody>
+            {% for i in range(length) %}
+                <tr>
+                    <td>{{ rows[i]["symbol"] }}</td>
+                    <td>{{ rows[i]["name"] }}</td>
+                    <td>{{ rows[i]["shares"] }}</td>
+                    <td>{{ rows[i]["format_price"] }}</td>
+                    <td id="{{ i }}"></td>
+                    <td id="t{{ i }}"></td>
+                </tr>
+            {% endfor %}
+                <tr>
+                    <td colspan="5" text-align="left">CASH</td>
+                    <td>{{ cash }}</td>
+                </tr>
+        </tbody>
+        <tfoot>
+            <td colspan="5"></td>
+            <td id="total"></td>
+        </tfoot>
+    </table>
+{% endblock %}

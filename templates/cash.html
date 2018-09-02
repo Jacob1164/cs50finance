@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Cash
+{% endblock %}
+
+{% block main %}
+    <p>Add some cash!</p>
+    <form action="/cash" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="cash" placeholder="Amount" type="number"/>
+        </div>
+        <button class="btn btn-primary" type="submit">Add</button>
+    </form>
+{% endblock %}

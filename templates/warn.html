@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Are you sure?
+{% endblock %}
+
+{% block main %}
+    <p>Are you sure you want to delete your account?</p>
+    <p>This action can not be undone!</p>
+    <form action="/account" method="get">
+        <button class="btn btn-primary" type="submit">Nevermind</button>
+    </form>
+    <br>
+    <p>Delete your account:</p>
+    <form action="/delete" method="post">
+        <button class="btn btn-primary" type="submit">Delete Account</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Account
+{% endblock %}
+
+{% block main %}
+    <p>Welcome, {{ name }}!</p>
+    <br>
+    <p>Change your password:</p>
+    <form id="account" action="/account" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="old" placeholder="Current Password" type="password"/>
+        </div>
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="new" placeholder="New Password" type="password"/>
+        </div>
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="confirm" placeholder="Confirm New Password" type="password"/>
+        </div>
+        <button class="btn btn-primary" type="submit">Change Password</button>
+    </form>
+    <br>
+    <p>Delete your account:</p>
+    <form action="/check" method="post">
+        <button class="btn btn-primary" type="submit">Delete Account</button>
+    </form>
+{% endblock %}
